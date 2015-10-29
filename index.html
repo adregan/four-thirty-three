@@ -83,11 +83,10 @@
     var sampleRate = 44100;
     var bitsPerSample = 16;
     var frameCount = sampleRate * 273.0 * channels;
-    var audBuff = context.createBuffer(channels, frameCount, sampleRate)
     var spaceMultiplyer = bitsPerSample / 8;
 
     // The data starts at byte 44 after the header
-    var buffer = new ArrayBuffer(44 + audBuff.length * spaceMultiplyer); 
+    var buffer = new ArrayBuffer(44 + frameCount * spaceMultiplyer); 
     var view = new DataView(buffer);
 
     // bytes 0 - 3 : Chunk ID "RIFF"
@@ -96,7 +95,7 @@
     view.setUint8(2, 'F'.charCodeAt(0))    
     view.setUint8(3, 'F'.charCodeAt(0))    
     // bytes 4 - 7 : ChunkSize 36 + Subchunk2 size (little endian)
-    view.setUint32(4, 36 + audBuff.length, true)
+    view.setUint32(4, 36 + frameCount, true)
     // bytes 8-11 : Format "WAVE"
     view.setUint8(8,  'W'.charCodeAt(0))    
     view.setUint8(9,  'A'.charCodeAt(0))    
@@ -137,20 +136,20 @@
     view.setUint32(40, frameCount * channels * (bitsPerSample/8), true)
 
     // bytes 44 -> : the data (little endian)
-    function convertData(offset, data, dataView) {
+    function convertData(offset, lengthOfSilence, dataView) {
       if (bitsPerSample === 8) {
-        for(var i = 0; i < data.length; i++, offset+=1) {
+        for(var i = 0; i < lengthOfSilence; i++, offset+=1) {
           dataView.setUint8(offset, 0);
         }
       }
       else {
-        for (var i = 0; i < data.length; i++, offset+=2){
+        for (var i = 0; i < lengthOfSilence; i++, offset+=2){
           dataView.setInt16(offset, 0, true);
         }
       }
     }
 
-    convertData(44, audBuff, view);
+    convertData(44, frameCount, view);
 
     var blob = new Blob([view], {type: 'audio/wav'})
     var url = URL.createObjectURL(blob);
