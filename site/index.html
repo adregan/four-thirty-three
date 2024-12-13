@@ -35,6 +35,15 @@
         </li>
       </ul>
     </footer>
+    <script type="text/javascript">
+      const url = toUrl();
 
+      const player = document.querySelector("#player");
+      const downloadLink = document.querySelector("#download");
+
+      player.src = url;
+      downloadLink.href = url;
+      downloadLink.download = "cage_433.wav";
+    </script>
   </body>
 </html>
