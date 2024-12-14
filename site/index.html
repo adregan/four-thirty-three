@@ -6,32 +6,41 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
     <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
-    <object type="image/svg+xml" data="433.svg" class="logo">
-      <img src="433.svg" />
-    </object>
+    <header>
+      <object
+        type="image/svg+xml"
+        data="433.svg"
+        aria-label="Four Thirty Three"
+      ></object>
+    </header>
 
-    <p class="about">
-      John Cage's famous composition
-      <a href="https://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3"><i>4'33"</i></a>
-      performed by your browser. Listen and
-      <a href="#" id="download">download</a>
-      a high quality copy of this performance.
-    </p>
+    <main>
+      <p>
+        John Cage's famous composition
+        <a href="https://en.wikipedia.org/wiki/4%E2%80%B233%E2%80%B3">
+          <i>4'33"</i>
+        </a> performed by your browser. Listen and
+        <a href="#" id="download">download</a>
+        a high quality copy of this performance.
+      </p>
 
-    <audio controls id="player" class="player"></audio>
+      <audio controls id="player" class="player"></audio>
+    </main>
 
-    <footer class="footer">
+    <footer>
       <ul>
         <li>By Duncan Regan</li>
         <li>
           <a href="https://github.com/adregan/four-thirty-three">Github</a>
         </li>
         <li>
-          <a href="mailto:433@duncanregan.com?Subject=Four Thirty-Three">Contact</a>
+          <a href="mailto:433@duncanregan.com?Subject=Four Thirty-Three">
+            Contact
+          </a>
         </li>
       </ul>
     </footer>
