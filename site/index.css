@@ -34,8 +34,10 @@ header {
   padding: 0 1rem;
 }
 
-header object {
+header svg {
+  fill: var(--primary-color);
   max-width: 30rem;
+  width: 100%;
 }
 
 main {
