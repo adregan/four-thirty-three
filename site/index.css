@@ -13,9 +13,9 @@ a {
 
 body {
   background-image: url("jcage_headphones.png");
-  background-position: center bottom;
+  background-position: center calc(100% - 2rem);
   background-repeat: no-repeat;
-  background-size: auto 40%;
+  background-size: auto 40dvh;
   border: 1rem solid var(--primary-color);
   border-bottom: none;
   display: grid;
