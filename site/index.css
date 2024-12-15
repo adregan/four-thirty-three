@@ -20,7 +20,7 @@ body {
   border-bottom: none;
   display: grid;
   font-family: Georgia, Times, "Times New Roman", serif;
-  grid-template-rows: 14rem 1fr max-content;
+  grid-template-rows: max-content 1fr max-content;
   margin: 0;
   min-height: 100dvh;
   row-gap: 2rem;
@@ -31,6 +31,7 @@ header {
   align-items: flex-end;
   display: flex;
   justify-content: center;
+  height: 14rem;
   padding: 0 1rem;
 }
 
