@@ -55,6 +55,7 @@ main a {
 }
 
 main p {
+  backdrop-filter: blur(.5rem);
   line-height: 1.618;
   max-width: 60ch;
   text-align: center;
