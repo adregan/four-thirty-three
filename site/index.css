@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #333;
+  --primary-color: #292929;
 }
 
 * {
@@ -56,6 +56,7 @@ main a {
 
 main p {
   backdrop-filter: blur(.5rem);
+  color: var(--primary-color);
   line-height: 1.618;
   max-width: 60ch;
   text-align: center;
