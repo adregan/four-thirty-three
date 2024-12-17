@@ -11,7 +11,12 @@ a {
   text-decoration-thickness: 1px;
 }
 
+html {
+  background-color: var(--primary-color);
+}
+
 body {
+  background-color: white;
   background-image: url("jcage_headphones.png");
   background-position: center calc(100% - 2rem);
   background-repeat: no-repeat;
